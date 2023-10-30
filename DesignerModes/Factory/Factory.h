@@ -1,5 +1,7 @@
 #pragma once
 #include <string.h>
+#include <string>
+using namespace std;
 class Product{
 public:
     virtual ~Product() = default;
@@ -48,12 +50,12 @@ class concreateCreator1 : public Creator
 
 class concreateCreator2 :public Creator
 {
-    public:
-    Product *FactoryMethod() const override
+public:
+    Product* FactoryMethod() const override
     {
         return new subProduct2;
     }
-}
+};
 
 class Factory
 {
