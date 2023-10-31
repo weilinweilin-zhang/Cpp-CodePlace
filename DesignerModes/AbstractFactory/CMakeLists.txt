@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(AbStractFactory)
+file(GLOB SRC_FILES ./*.cpp ./src/*.cpp ./src/*.h)
+set(CMAKE_C_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g-")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g-")
+add_executable(AbStractFactory ${SRC_FILES})
+target_include_directories(AbStractFactory PUBLIC ${PROJECT_SOURCE_DIR})
