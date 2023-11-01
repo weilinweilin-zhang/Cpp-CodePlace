@@ -4,6 +4,7 @@
 #include "ListPage.h"
 #include "ListTray.h"
 
+// 子工厂规定生成的具体的产品
 class ListFactory : public IFactory
 {
     public:

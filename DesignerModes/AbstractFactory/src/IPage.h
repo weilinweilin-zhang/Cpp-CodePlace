@@ -1,24 +1,29 @@
-#pragma once 
-#include "IItem.h"
+#pragma once
 #include <iostream>
-#include <string>
 #include <vector>
+#include "IItem.h"
+#include <string>
 
+// 这是独立的一零件
 class IPage
 {
-    public:
-        virtual ~IPage() = default;
-        IPage(const std::string &title, const std::string &author)
-            : m_title(title), m_author(author){}
+public:
+    virtual ~IPage() = default;
+    IPage(const std::string &title,const std::string &author) : m_title(title),m_author(author){}
 
-        void addItem(IItem *item)
-        {
-            std::out << makeHTML() << std::endl;
-        }
-        virtual std::string makeHTML() = 0;
+    void addItem(std::shared_ptr<IItem> item)
+    {
+        m_itemlist.push_back(item);
+    }
+    void output()
+    {
+        std::cout << makeHTML() << std::endl;
+    }
 
-    protected :
-        std::string m_title;
-        std::string m_author;
-        std::vector<IItem *> m_itemList;
+    virtual std::string makeHTML() = 0;
+
+protected:
+    std::string m_title;
+    std::string m_author;
+    std::vector<std::shared_ptr<IItem>> m_itemlist;
 };

@@ -30,7 +30,7 @@ class IFactoryHelper
         return itor->second();
     }
         // 注册容器，在托管帮助类这边就可以拿到所有子类的对象 （主要作用静态变量，但是释放是个问题）
-        static std::unordered_map<std::string, std::function<IFactory *()>> s_createrMap;
+    static std::unordered_map<std::string, std::function<IFactory *()>> s_createrMap;
 };
 // 定义并且分配内存空间
 std::unordered_map<std::string, std::function<IFactory *()>> IFactoryHelper::s_createrMap;

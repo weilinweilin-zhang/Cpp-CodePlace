@@ -3,8 +3,7 @@
 class ListPage : public IPage
 {
 public:
-    using IPage::IPage;
-    std::string makeHTML() override
+    using IPage::IPage;    std::string makeHTML() override
     {
         std::string str;
         str.append("<html><head><title>" + m_title + "</head></title>\n");
@@ -12,7 +11,7 @@ public:
         str.append("<h1>" + m_title + "</h1>\n");
         str.append("<ul>\n");
 
-        for (auto item : m_itemList)
+        for (auto item : m_itemlist)
         {
             str.append(item->makeHTML());
         }
