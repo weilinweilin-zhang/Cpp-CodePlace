@@ -26,3 +26,9 @@ class Decorator:public Component
         return this->component_->Operation();
     }
 };
+
+class ConcreteDecoratorA : public Decorator
+{
+    public:
+    ConcreteDecoratorA(Component *component):Decorator(component){}
+}
