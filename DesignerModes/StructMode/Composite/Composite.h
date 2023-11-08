@@ -7,7 +7,7 @@ class Component{
     protected:
         Component *parent_;
     public:
-        virtual ~Component();
+        virtual ~Component() {};
         void SetParent(Component *parent)
         {
             this->parent_ = parent;
@@ -63,8 +63,24 @@ class Composite :public Component{
                     result += c->Operation();
                 }
                 else{
-                    result 
+                    result += c->Operation() + "+";
                 }
             }
+            return "Branch(" + result + ")";
         }
 };
+
+void clientCode(Component *Component)
+{
+        std::cout << "RESULT:" << Component->Operation();
+}
+
+void clientCode2(Component *component1,Component *component2)
+{
+    if(component1->IsComposite())
+    {
+        component1->Add(component2);
+    }
+    std::cout << "RESULT" << component1->Operation();
+}
+
