@@ -33,8 +33,8 @@ class Facade
     Facade(Subsystem1 *subsystem1 = nullptr,
            Subsystem2 *subsystem2 = nullptr)
            {
-            this->Subsystem1_ = subsystem1 ?: new Subsystem1;
-            this->Subsystem2_ = subsystem2 ?: new Subsystem1;
+            this->Subsystem1_ = subsystem1 ?subsystem1 : new Subsystem1;
+            this->Subsystem2_ = subsystem2 ?subsystem2 : new Subsystem2;
            }
     ~Facade()
     {

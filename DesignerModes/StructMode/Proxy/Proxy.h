@@ -32,6 +32,7 @@ private:
     void LogAccess() const{
         std::cout << "proxy : logging the time of request";
     }
+public:
     Proxy(RealSubject *real_subject) : real_subject(new RealSubject(*real_subject)) {
   }
     ~Proxy() {
