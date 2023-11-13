@@ -89,7 +89,7 @@ int main() {
     Invoker *invoker =new Invoker;
     invoker->SetOnstart(new SimpleCommand("say hi !"));
     Receiver *receiver = new Receiver;
-    invoker->SetOnFinish(new Complexcommand(receiver, "send email", "save report"));
+    invoker->SetOnFinish(new ComplexCommand(receiver, "send email", "save report"));
     invoker->DoSomethingImportant();
     delete invoker;
     delete receiver;
