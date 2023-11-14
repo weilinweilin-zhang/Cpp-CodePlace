@@ -63,8 +63,3 @@ void clientCode()
 }
 
 
-int main()
-{
-    clientCode();
-    return 0;
-}
